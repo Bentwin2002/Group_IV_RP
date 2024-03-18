@@ -1,7 +1,8 @@
 import tkinter as tk
-from fabric import Connection
 import Functions as f
 import Memory_Locations as ML
+from tkinter import ttk
+import ttkthemes as tkt
 
 def print_to_ssh(command):
     print(command)
@@ -9,35 +10,89 @@ def print_to_ssh(command):
 
 class Button:
     def __init__(self, root, text, command, row, column):
-        self.button = tk.Button(root, text=text, command=command)
+        self.button = ttk.Button(root, text=text, command=command)
         self.button.grid(row=row, column=column)
 
 class Label:
     def __init__(self, root, text, row, column):
-        self.label = tk.Label(root, text=text)
+        self.label = ttk.Label(root, text=text)
         self.label.grid(row=row, column=column)
 
 class Spinbox:
     def __init__(self, root, from_, to,step,row, column):
-        self.spinbox = tk.Spinbox(root, from_=from_, to=to,increment=step)
+        self.val = tk.IntVar(root)
+        self.val.set(0)
+        self.spinbox = ttk.Spinbox(root, from_=from_, to=to,increment=step, textvariable=self.val)
         self.spinbox.grid(row=row, column=column)
+        
 
     def get(self):
         return self.spinbox.get()
 
 class Tickbox:
-    def __init__(self, root, text, row, column,value):
-        self.tickbox = tk.Checkbutton(root, text=text, variable=value)
+    def __init__(self, root, text, row, column):
+        self.val = tk.IntVar()
+        self.val.set(1)
+        self.tickbox = ttk.Checkbutton(root, text=text, variable=self.val, onvalue=1, offvalue=0)
         self.tickbox.grid(row=row, column=column)
+    def get(self):
+        return self.val.get()
+
 
 
 class Radiobutton:
     def __init__(self, root, text, variable, value, row, column):
-        self.radiobutton = tk.Radiobutton(root, text=text, variable=variable, value=value)
+        self.radiobutton = ttk.Radiobutton(root, text=text, variable=variable, value=value)
         self.radiobutton.grid(row=row, column=column)
 
+class Scrollbar:
+    def __init__(self, root, row, column, rowspan, sticky):
+        self.scrollbar = ttk.Scrollbar(root)
+        self.scrollbar.grid(row =row, column=column, rowspan=rowspan, sticky= sticky)
+#add a theme to the GUI
 
-root = tk.Tk()
+root_main = tkt.ThemedTk(theme='breeze')
+
+
+
+
+#Create a canvas to add the scroll bar
+canvas = tk.Canvas(root_main, width=1000, height=600, scrollregion=(0,0,1000,1000))
+#add a scroll bar to the canvas
+scrollbar = ttk.Scrollbar(root_main, orient='vertical', command=canvas.yview)
+
+
+#configure the canvas to add the scroll bar
+canvas.configure(yscrollcommand=scrollbar.set)
+canvas.bind('<Configure>', lambda e: canvas.configure(scrollregion=canvas.bbox('all')))
+
+scrollbar.configure(command=canvas.yview)
+
+
+#add horizontal scroll bar that spans the entire canvas
+scrollbar_horizontal = ttk.Scrollbar(root_main, orient='horizontal', command=canvas.xview)
+canvas.configure(xscrollcommand=scrollbar_horizontal.set)
+canvas.bind('<Configure>', lambda e: canvas.configure(scrollregion=canvas.bbox('all')))
+scrollbar_horizontal.configure(command=canvas.xview)
+scrollbar_horizontal.pack(side='bottom', fill='x', expand=True)
+
+scrollbar.pack(side='right', fill='y', expand=True)
+
+canvas.pack(side='left', fill='both', expand=True)
+#make mouse wheel scroll the canvas
+
+
+
+#Create a frame to add the scroll bar
+root = ttk.Frame(canvas)
+
+
+#Add the frame to the canvas
+canvas.create_window((0,0), window=root, anchor='nw')
+
+
+
+
 kn_title = Label(root, text='PID Parameters', row=0, column=0)
 kn_label = Label(root, text='PID Values', row=0, column=1)
 kn_bitshift_label = Label(root, text='PID Bitshift Values', row=0, column=2)
@@ -69,14 +124,12 @@ low_pass_cut_off_2 = Spinbox(root, from_=0, to=20000,step=1,row=6, column=1)
 low_pass_2_cut_label = Label(root, text='Low Pass 2 cutoff (Hz):', row=6, column=0)
 
 #add tickboxes
-low_pass_bypass_1 = tk.IntVar()
-low_pass_bypass_2 = tk.IntVar()
-low_pass_bypass_1_tickbox = Tickbox(root, text='Low Pass 1 Bypass', row=5, column=2,value=low_pass_bypass_1)
-low_pass_bypass_2_tickbox = Tickbox(root, text='Low Pass 2 Bypass', row=6, column=2,value=low_pass_bypass_2)
+
+low_pass_bypass_1_tickbox = Tickbox(root, text='Low Pass 1 Bypass', row=5, column=2)
+low_pass_bypass_2_tickbox = Tickbox(root, text='Low Pass 2 Bypass', row=6, column=2)
 
 #add set buttons
-set_button_low_pass_1 = Button(root, text='Set Low Pass 1', command=lambda: f.set_low_pass_filter_1(low_pass_cut_off_1.get(), low_pass_bypass_1.get()), row=5, column=3)
-set_button_low_pass_2 = Button(root, text='Set Low Pass 2', command=lambda: f.set_low_pass_filter_2(low_pass_cut_off_2.get(), low_pass_bypass_2.get()), row=6, column=3)
+set_button_low_pass = Button(root, text='Set Low Pass Filters', command=lambda: f.set_low_pass_filters(low_pass_cut_off_1.get(), low_pass_bypass_1_tickbox.get(), low_pass_cut_off_2.get(), low_pass_bypass_2_tickbox.get()), row=5, column=3)
 
 #add radio buttons
 radio_button = tk.IntVar()
@@ -119,7 +172,9 @@ clock_limit_spinbox = Spinbox(root, from_=0, to=2,step=0.01,row=12, column=1)
 set_button_clock_limit = Button(root, text='Set Clock Limit', command=lambda: f.clock_limit_secs(clock_limit_spinbox.get()), row=12, column=2)
 
 #Start up button
-start_up_button = Button(root, text='Start Up', command=lambda: f.start_up(), row=13, column=0)
+start_up_button = Button(root, text='Start Up', command=lambda: f.start_up(), row=8, column=3)
+#Stop PID button
+stop_pid_button = Button(root, text='Stop PID', command=lambda: f.stop_pid(), row=9, column=3)
 
 #add scaling for gain and offset of channel A
 scaling_label = Label(root, text='Scaling', row=13, column=2)
@@ -137,7 +192,8 @@ offset_B_spinbox = Spinbox(root, from_=0, to=255,step=1,row=15, column=4)
 set_offset_button_B = Button(root, text='Set B Offset', command=lambda: f.Scaling(0,offset_B_spinbox.get(),1,1,1), row=15, column=5) 
 #add reset button for scale
 reset_button_scale = Button(root, text='Reset Scale', command=lambda: f.Scaling(0,0,0,0,0), row=16, column=0)
-
 root.mainloop()
+
+
 
 

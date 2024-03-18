@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Mar 14 17:39:53 2024
+# Process ID: 8876
+# Current directory: C:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/PID_Ben_Final/PID_Ben_Final.runs/system_processing_system7_0_2_synth_1
+# Command line: vivado.exe -log system_processing_system7_0_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_processing_system7_0_2.tcl
+# Log file: C:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/PID_Ben_Final/PID_Ben_Final.runs/system_processing_system7_0_2_synth_1/system_processing_system7_0_2.vds
+# Journal file: C:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/PID_Ben_Final/PID_Ben_Final.runs/system_processing_system7_0_2_synth_1\vivado.jou
+# Running On: LAPTOP-CHI77AAF, OS: Windows, CPU Frequency: 2371 MHz, CPU Physical cores: 6, Host memory: 7907 MB
+#-----------------------------------------------------------
+source system_processing_system7_0_2.tcl -notrace

@@ -1,0 +1,345 @@
+
+*** Running vivado
+    with args -log system_low_pass_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_low_pass_0_1.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source system_low_pass_0_1.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 453.156 ; gain = 184.383
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/benja/Desktop/Complete_setup/tmp/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_low_pass_0_1
+Command: synth_design -top system_low_pass_0_1 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13980
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1298.039 ; gain = 439.957
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_low_pass_0_1' [c:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.gen/sources_1/bd/system/ip/system_low_pass_0_1/synth/system_low_pass_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'low_pass' [C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.srcs/sources_1/new/Low_pass.v:5]
+	Parameter DAC_DATA_WIDTH bound to: 14 - type: integer 
+	Parameter AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'low_pass' (0#1) [C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.srcs/sources_1/new/Low_pass.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'system_low_pass_0_1' (0#1) [c:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.gen/sources_1/bd/system/ip/system_low_pass_0_1/synth/system_low_pass_0_1.v:53]
+WARNING: [Synth 8-6014] Unused sequential element dv_a_reg was removed.  [C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.srcs/sources_1/new/Low_pass.v:68]
+WARNING: [Synth 8-6014] Unused sequential element V_in_b_reg was removed.  [C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.srcs/sources_1/new/Low_pass.v:93]
+WARNING: [Synth 8-6014] Unused sequential element dv_b_reg was removed.  [C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.srcs/sources_1/new/Low_pass.v:95]
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[31] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[30] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[29] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[28] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[27] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[26] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[25] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[24] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[23] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[22] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[21] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[20] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[19] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[18] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[17] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[16] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[15] in module low_pass is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[14] in module low_pass is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1409.031 ; gain = 550.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1409.031 ; gain = 550.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1409.031 ; gain = 550.949
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1409.031 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1444.312 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1445.297 ; gain = 0.984
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1445.297 ; gain = 587.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1445.297 ; gain = 587.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1445.297 ; gain = 587.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1445.297 ; gain = 587.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   64 Bit       Adders := 2     
+	   2 Input   64 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 3     
++---Multipliers : 
+	              14x64  Multipliers := 2     
++---Muxes : 
+	   3 Input   64 Bit        Muxes := 2     
+	   3 Input   61 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/V_in_a_reg' and it is trimmed from '64' to '19' bits. [C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.srcs/sources_1/new/Low_pass.v:66]
+DSP Report: Generating DSP inst/V_out_a2, operation Mode is: A*B.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: Generating DSP inst/V_out_a2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: Generating DSP inst/V_out_a2, operation Mode is: A*B.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: Generating DSP inst/V_out_a2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: operator inst/V_out_a2 is absorbed into DSP inst/V_out_a2.
+DSP Report: Generating DSP inst/V_out_b2, operation Mode is: A*B.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+DSP Report: Generating DSP inst/V_out_b2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+DSP Report: Generating DSP inst/V_out_b2, operation Mode is: A*B.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+DSP Report: Generating DSP inst/V_out_b2, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+DSP Report: operator inst/V_out_b2 is absorbed into DSP inst/V_out_b2.
+INFO: [Synth 8-3917] design system_low_pass_0_1 has port S_AXIS_tready driven by constant 1
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[31] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[30] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[29] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[28] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[27] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[26] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[25] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[24] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[23] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[22] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[21] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[20] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[19] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[18] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[17] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[16] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[15] in module system_low_pass_0_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXIS_tdata[14] in module system_low_pass_0_1 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1445.297 ; gain = 587.215
+---------------------------------------------------------------------------------
+ Sort Area is  inst/V_out_a2_0 : 0 0 : 2460 4939 : Used 1 time 0
+ Sort Area is  inst/V_out_a2_0 : 0 1 : 2479 4939 : Used 1 time 0
+ Sort Area is  inst/V_out_b2_5 : 0 0 : 2460 4939 : Used 1 time 0
+ Sort Area is  inst/V_out_b2_5 : 0 1 : 2479 4939 : Used 1 time 0
+ Sort Area is  inst/V_out_a2_3 : 0 0 : 2460 4578 : Used 1 time 0
+ Sort Area is  inst/V_out_a2_3 : 0 1 : 2118 4578 : Used 1 time 0
+ Sort Area is  inst/V_out_b2_6 : 0 0 : 2460 4578 : Used 1 time 0
+ Sort Area is  inst/V_out_b2_6 : 0 1 : 2118 4578 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++--------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name         | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|system_low_pass_0_1 | A*B            | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | (PCIN>>17)+A*B | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | A*B            | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | (PCIN>>17)+A*B | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | A*B            | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | (PCIN>>17)+A*B | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | A*B            | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | (PCIN>>17)+A*B | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++--------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 1445.297 ; gain = 587.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 1445.297 ; gain = 587.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 1455.895 ; gain = 597.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:47 . Memory (MB): peak = 1464.301 ; gain = 606.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:47 . Memory (MB): peak = 1464.301 ; gain = 606.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:47 . Memory (MB): peak = 1464.301 ; gain = 606.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:47 . Memory (MB): peak = 1464.301 ; gain = 606.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:47 . Memory (MB): peak = 1464.301 ; gain = 606.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:47 . Memory (MB): peak = 1464.301 ; gain = 606.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++--------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name         | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|system_low_pass_0_1 | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | PCIN>>17+A*B | 30     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | PCIN>>17+A*B | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | PCIN>>17+A*B | 30     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|system_low_pass_0_1 | PCIN>>17+A*B | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++--------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |    80|
+|2     |DSP48E1 |     8|
+|3     |LUT1    |   109|
+|4     |LUT2    |    81|
+|5     |LUT3    |   102|
+|6     |LUT4    |    18|
+|7     |LUT5    |    70|
+|8     |LUT6    |   314|
+|9     |FDRE    |   128|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:47 . Memory (MB): peak = 1464.301 ; gain = 606.219
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:46 . Memory (MB): peak = 1464.301 ; gain = 569.953
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:48 . Memory (MB): peak = 1464.301 ; gain = 606.219
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1476.387 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 88 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1480.035 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+The system cannot find the path specified.
+Synth Design complete | Checksum: dc8cb565
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:54 . Memory (MB): peak = 1480.035 ; gain = 1013.195
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1480.035 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.runs/system_low_pass_0_1_synth_1/system_low_pass_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_low_pass_0_1, cache-ID = 5edb5d0f99d16a20
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1480.035 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/benja/Desktop/clean/tmp/Final_WIP/Final_WIP.runs/system_low_pass_0_1_synth_1/system_low_pass_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_low_pass_0_1_utilization_synth.rpt -pb system_low_pass_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 18 18:29:03 2024...

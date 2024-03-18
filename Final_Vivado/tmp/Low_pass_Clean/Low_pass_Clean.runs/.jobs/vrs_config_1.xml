@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="system_axi_gpio_0_4_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_axi_gpio_0_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_low_pass_0_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_low_pass_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_axis_red_pitaya_adc_0_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_axis_red_pitaya_adc_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_axis_red_pitaya_dac_0_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_axis_red_pitaya_dac_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_clk_wiz_0_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_clk_wiz_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_axi_gpio_0_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_axi_gpio_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_Selector_2_0_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_Selector_2_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_processing_system7_0_1_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_processing_system7_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_rst_ps7_0_50M_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_rst_ps7_0_50M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_auto_pc_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_axi_gpio_0_3_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_axi_gpio_0_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="system_axi_gpio_0_0_synth_1"/>
+	</Run>
+	<Run Id="system_signal_split_2_0_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_signal_split_2_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_axi_gpio_0_2_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_axi_gpio_0_2_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="system_axi_gpio_0_0_synth_1"/>
+	</Run>
+	<Run Id="system_util_ds_buf_2_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_util_ds_buf_2_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_util_ds_buf_1_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_util_ds_buf_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_xbar_0_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="system_axi_gpio_0_1_synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/system_axi_gpio_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="system_axi_gpio_0_0_synth_1"/>
+	</Run>
+	<Run Id="synth_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="system_axi_gpio_0_4_synth_1"/>
+		<Parent Id="system_low_pass_0_0_synth_1"/>
+		<Parent Id="system_axis_red_pitaya_adc_0_0_synth_1"/>
+		<Parent Id="system_axis_red_pitaya_dac_0_0_synth_1"/>
+		<Parent Id="system_clk_wiz_0_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_0_synth_1"/>
+		<Parent Id="system_Selector_2_0_0_synth_1"/>
+		<Parent Id="system_processing_system7_0_1_synth_1"/>
+		<Parent Id="system_rst_ps7_0_50M_0_synth_1"/>
+		<Parent Id="system_auto_pc_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_3_synth_1"/>
+		<Parent Id="system_signal_split_2_0_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_2_synth_1"/>
+		<Parent Id="system_util_ds_buf_2_0_synth_1"/>
+		<Parent Id="system_util_ds_buf_1_0_synth_1"/>
+		<Parent Id="system_xbar_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_1_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="C:/Users/benja/desktop/clean/tmp/Low_pass_Clean/Low_pass_Clean.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="system_axi_gpio_0_4_synth_1"/>
+		<Parent Id="system_low_pass_0_0_synth_1"/>
+		<Parent Id="system_axis_red_pitaya_adc_0_0_synth_1"/>
+		<Parent Id="system_axis_red_pitaya_dac_0_0_synth_1"/>
+		<Parent Id="system_clk_wiz_0_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_0_synth_1"/>
+		<Parent Id="system_Selector_2_0_0_synth_1"/>
+		<Parent Id="system_processing_system7_0_1_synth_1"/>
+		<Parent Id="system_rst_ps7_0_50M_0_synth_1"/>
+		<Parent Id="system_auto_pc_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_3_synth_1"/>
+		<Parent Id="system_signal_split_2_0_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_2_synth_1"/>
+		<Parent Id="system_util_ds_buf_2_0_synth_1"/>
+		<Parent Id="system_util_ds_buf_1_0_synth_1"/>
+		<Parent Id="system_xbar_0_synth_1"/>
+		<Parent Id="system_axi_gpio_0_1_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+		<Parameter Name="general.shortenLongPath" Val="true" Type="bool"/>
+	</Parameters>
+	<ProductInfo Name="vivado"/>
+</Runs>
+

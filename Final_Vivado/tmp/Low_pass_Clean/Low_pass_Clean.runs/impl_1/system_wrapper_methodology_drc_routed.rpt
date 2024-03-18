@@ -1,0 +1,979 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon Mar 18 17:12:05 2024
+| Host         : LAPTOP-CHI77AAF running 64-bit major release  (build 9200)
+| Command      : report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
+| Design       : system_wrapper
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 184
++-----------+------------------+------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                          | Violations |
++-----------+------------------+------------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree   | 1          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks       | 1          |
+| TIMING-7  | Critical Warning | No common node between related clocks                | 1          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin            | 1          |
+| TIMING-16 | Warning          | Large setup violation                                | 128        |
+| TIMING-18 | Warning          | Missing input or output delay                        | 44         |
+| XDCC-4    | Warning          | User Clock constraint overwritten with the same name | 2          |
+| XDCC-5    | Warning          | User Non-Timing constraint/property overwritten      | 4          |
+| XDCC-8    | Warning          | User Clock constraint overwritten on the same source | 2          |
++-----------+------------------+------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock system_i/clk_wiz_0/inst/clk_in1 is defined downstream of clock adc_clk and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and adc_clk are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks adc_clk]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and adc_clk are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks adc_clk]
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock system_i/clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin system_i/clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -10.045 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[4]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -10.061 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[6]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -10.067 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[7]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -10.075 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[5]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -10.089 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[8]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -10.109 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[10]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -10.135 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[7]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -10.156 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[5]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -10.161 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[8]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -10.177 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[10]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -10.185 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[11]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -10.193 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[9]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -10.207 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[12]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -10.227 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[14]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -10.251 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[11]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -10.272 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[9]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -10.276 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[12]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -10.292 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[14]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -10.303 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[15]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -10.311 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[13]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -10.325 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[16]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -10.345 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[18]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -10.366 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[15]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -10.387 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[13]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -10.392 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[16]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -10.408 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[18]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -10.421 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[19]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -10.429 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[17]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -10.442 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[20]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -10.462 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[22]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -10.482 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[19]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -10.503 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[17]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -10.538 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[23]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -10.546 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[21]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -10.549 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[20]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -10.560 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[24]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -10.565 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[22]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -10.580 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[26]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -10.639 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[23]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -10.652 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[1]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -10.656 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[27]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -10.660 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[21]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -10.661 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[24]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -10.664 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[25]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -10.677 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[26]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -10.678 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[28]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -10.698 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[30]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -10.751 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[27]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -10.772 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[25]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -10.774 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[31]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -10.774 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[28]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -10.782 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[29]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -10.790 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[30]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -10.796 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[32]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -10.816 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[34]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -10.864 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[31]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -10.885 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[29]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -10.886 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[32]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -10.892 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[35]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -10.900 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[33]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -10.902 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[34]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -10.915 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[36]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -10.935 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[38]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -10.976 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[35]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -10.997 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[33]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -10.999 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[36]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -11.011 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[39]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -11.015 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[38]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -11.019 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[37]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -11.033 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[40]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -11.053 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[42]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -11.089 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[39]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -11.110 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[37]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -11.113 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[40]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -11.129 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[43]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -11.129 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[42]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -11.137 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[41]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -11.150 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[44]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -11.170 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[46]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -11.203 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[43]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#81 Warning
+Large setup violation  
+There is a large setup violation of -11.224 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[41]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#82 Warning
+Large setup violation  
+There is a large setup violation of -11.226 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[44]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#83 Warning
+Large setup violation  
+There is a large setup violation of -11.242 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[46]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#84 Warning
+Large setup violation  
+There is a large setup violation of -11.246 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[47]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#85 Warning
+Large setup violation  
+There is a large setup violation of -11.254 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[45]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#86 Warning
+Large setup violation  
+There is a large setup violation of -11.268 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[48]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#87 Warning
+Large setup violation  
+There is a large setup violation of -11.288 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[50]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#88 Warning
+Large setup violation  
+There is a large setup violation of -11.316 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[47]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#89 Warning
+Large setup violation  
+There is a large setup violation of -11.337 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[45]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#90 Warning
+Large setup violation  
+There is a large setup violation of -11.338 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[48]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#91 Warning
+Large setup violation  
+There is a large setup violation of -11.354 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[50]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#92 Warning
+Large setup violation  
+There is a large setup violation of -11.364 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[51]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#93 Warning
+Large setup violation  
+There is a large setup violation of -11.372 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[49]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#94 Warning
+Large setup violation  
+There is a large setup violation of -11.387 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[52]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#95 Warning
+Large setup violation  
+There is a large setup violation of -11.407 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[54]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#96 Warning
+Large setup violation  
+There is a large setup violation of -11.428 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[51]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#97 Warning
+Large setup violation  
+There is a large setup violation of -11.449 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[49]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#98 Warning
+Large setup violation  
+There is a large setup violation of -11.451 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[52]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#99 Warning
+Large setup violation  
+There is a large setup violation of -11.467 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[54]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#100 Warning
+Large setup violation  
+There is a large setup violation of -11.483 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[55]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#101 Warning
+Large setup violation  
+There is a large setup violation of -11.491 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[53]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#102 Warning
+Large setup violation  
+There is a large setup violation of -11.505 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[56]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#103 Warning
+Large setup violation  
+There is a large setup violation of -11.525 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[58]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#104 Warning
+Large setup violation  
+There is a large setup violation of -11.541 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[55]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#105 Warning
+Large setup violation  
+There is a large setup violation of -11.562 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[53]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#106 Warning
+Large setup violation  
+There is a large setup violation of -11.564 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[56]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#107 Warning
+Large setup violation  
+There is a large setup violation of -11.580 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[58]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#108 Warning
+Large setup violation  
+There is a large setup violation of -11.601 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[59]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#109 Warning
+Large setup violation  
+There is a large setup violation of -11.609 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[57]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#110 Warning
+Large setup violation  
+There is a large setup violation of -11.624 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[60]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#111 Warning
+Large setup violation  
+There is a large setup violation of -11.644 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[62]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#112 Warning
+Large setup violation  
+There is a large setup violation of -11.654 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[59]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#113 Warning
+Large setup violation  
+There is a large setup violation of -11.675 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[57]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#114 Warning
+Large setup violation  
+There is a large setup violation of -11.677 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[60]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#115 Warning
+Large setup violation  
+There is a large setup violation of -11.693 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[62]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#116 Warning
+Large setup violation  
+There is a large setup violation of -11.720 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[63]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#117 Warning
+Large setup violation  
+There is a large setup violation of -11.728 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[61]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#118 Warning
+Large setup violation  
+There is a large setup violation of -11.767 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[63]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#119 Warning
+Large setup violation  
+There is a large setup violation of -11.788 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[61]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#120 Warning
+Large setup violation  
+There is a large setup violation of -9.394 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[0]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#121 Warning
+Large setup violation  
+There is a large setup violation of -9.513 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[0]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#122 Warning
+Large setup violation  
+There is a large setup violation of -9.569 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[1]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#123 Warning
+Large setup violation  
+There is a large setup violation of -9.797 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[2]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#124 Warning
+Large setup violation  
+There is a large setup violation of -9.813 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[2]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#125 Warning
+Large setup violation  
+There is a large setup violation of -9.862 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[3]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#126 Warning
+Large setup violation  
+There is a large setup violation of -9.872 ns between system_i/low_pass_0/inst/V_out_a_reg[0]/C (clocked by adc_clk) and system_i/low_pass_0/inst/V_out_a_reg[3]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#127 Warning
+Large setup violation  
+There is a large setup violation of -9.971 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[4]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#128 Warning
+Large setup violation  
+There is a large setup violation of -9.991 ns between system_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and system_i/low_pass_0/inst/V_out_b_reg[6]/D (clocked by adc_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[0] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[10] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[11] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[12] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[13] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[1] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[2] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[3] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[4] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[5] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[6] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[7] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[8] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_a_i[9] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[0] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[10] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[11] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[12] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[13] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[1] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[2] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[3] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#23 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[4] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#24 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[5] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#25 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[6] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#26 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[7] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#27 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[8] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#28 Warning
+Missing input or output delay  
+An input delay is missing on adc_dat_b_i[9] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#29 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[0] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#30 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[10] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#31 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[11] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#32 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[12] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#33 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[13] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#34 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[1] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#35 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[2] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#36 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[3] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#37 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[4] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#38 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[5] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#39 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[6] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#40 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[7] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#41 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[8] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#42 Warning
+Missing input or output delay  
+An output delay is missing on dac_dat_o[9] relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#43 Warning
+Missing input or output delay  
+An output delay is missing on dac_rst_o relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+TIMING-18#44 Warning
+Missing input or output delay  
+An output delay is missing on dac_sel_o relative to the rising and/or falling clock edge(s) of adc_clk.
+Related violations: <none>
+
+XDCC-4#1 Warning
+User Clock constraint overwritten with the same name  
+A new clock constraint create_clock overrides a previous user clock constraint with the same name.
+New: create_clock -period 4.000 -name rx_clk [get_ports {daisy_p_i[1]}] (Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 7))
+Previous: create_clock -period 4.000 -name rx_clk [get_ports {daisy_p_i[1]}] (Source: c:/Users/benja/desktop/clean/cfg/clocks.xdc (Line: 6))
+Related violations: <none>
+
+XDCC-4#2 Warning
+User Clock constraint overwritten with the same name  
+A new clock constraint create_clock overrides a previous user clock constraint with the same name.
+New: create_clock -period 8.000 -name adc_clk [get_ports adc_clk_p_i] (Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 2))
+Previous: create_clock -period 8.000 -name adc_clk [get_ports adc_clk_p_i] (Source: c:/Users/benja/desktop/clean/cfg/clocks.xdc (Line: 1))
+Related violations: <none>
+
+XDCC-5#1 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on dac_pwm_o[0] overrides a previous user property.
+New Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 122)
+Previous Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 110)
+Related violations: <none>
+
+XDCC-5#2 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on dac_pwm_o[1] overrides a previous user property.
+New Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 122)
+Previous Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 110)
+Related violations: <none>
+
+XDCC-5#3 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on dac_pwm_o[2] overrides a previous user property.
+New Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 122)
+Previous Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 110)
+Related violations: <none>
+
+XDCC-5#4 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on dac_pwm_o[3] overrides a previous user property.
+New Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 122)
+Previous Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 110)
+Related violations: <none>
+
+XDCC-8#1 Warning
+User Clock constraint overwritten on the same source  
+A new clock constraint create_clock overrides a previous user clock constraint defined on the same source.
+New: create_clock -period 4.000 -name rx_clk [get_ports {daisy_p_i[1]}] (Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 7))
+Previous: create_clock -period 4.000 -name rx_clk [get_ports {daisy_p_i[1]}] (Source: c:/Users/benja/desktop/clean/cfg/clocks.xdc (Line: 6))
+Related violations: <none>
+
+XDCC-8#2 Warning
+User Clock constraint overwritten on the same source  
+A new clock constraint create_clock overrides a previous user clock constraint defined on the same source.
+New: create_clock -period 8.000 -name adc_clk [get_ports adc_clk_p_i] (Source: c:/Users/benja/desktop/clean/cfg/ports.xdc (Line: 2))
+Previous: create_clock -period 8.000 -name adc_clk [get_ports adc_clk_p_i] (Source: c:/Users/benja/desktop/clean/cfg/clocks.xdc (Line: 1))
+Related violations: <none>
+
+

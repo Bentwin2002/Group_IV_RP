@@ -112,11 +112,10 @@ lp2_var = IntVar()
 low_pass_bypass_2_checkbox = Checkbutton(root, variable=lp2_var, onvalue=1, offvalue=0)
 low_pass_bypass_2_checkbox.grid(row=6, column=3)
 #create low pass set buttons
-set_button_RC_1 = Button(root, text='Set Low Pass RC 1', command=lambda: f.set_low_pass_filter_1(float(low_pass_RC_1_spinbox.get()),lp1_var.get()))
+set_button_RC_1 = Button(root, text='Set Low Pass Filters', command=lambda: f.set_low_pass_filters(float(low_pass_RC_1_spinbox.get()),lp1_var.get(),float(low_pass_RC_2_spinbox.get()),lp2_var.get()))
 set_button_RC_1.grid(row=5, column=4)
 
-set_button_RC_2 = Button(root, text='Set Low Pass RC 2', command=lambda: f.set_low_pass_filter_2(float(low_pass_RC_2_spinbox.get()),lp2_var.get()))
-set_button_RC_2.grid(row=6, column=4)
+
 
 #radial button for selector input 1 2 or 3
 selector_label = Label(root, text='Selector Input')

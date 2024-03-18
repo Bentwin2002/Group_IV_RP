@@ -2,12 +2,17 @@ import os
 import time
 import Memory_Locations as ML
 import numpy as np
-from fabric import Connection
 from time import sleep
+import paramiko as pm
 
-ip = 'this is the ip address of the board'
+ssh = pm.SSHClient()
+ssh.set_missing_host_key_policy(pm.AutoAddPolicy())
+ip = '169.254.204.192'
+port = 22
+user = 'root'
+password = 'root'
+conn = ssh.connect(ip,port=port, username=user, password=password)
 
-conn = Connection(ip, user='root', connect_kwargs={'password': 'root'})
 
 
 #Easier to create functions for each memory location than a class, probably easier to use tkinter later.
@@ -42,78 +47,81 @@ def Scaling(bounds,value,gain_offset,a_or_b,reset):
 
 def Selector(output):
     memory_location =  ML.selector_ad
-    print (f'monitor {memory_location} {int(output)}') #output =0,1,2: PID, Trigger_DAC, pure_DAC
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(output)}') #output =0,1,2: PID, Trigger_DAC, pure_DAC
+    print(stdout.read())
 
 def Set_kp(value):
     memory_location =  ML.set_kp_ad
-    print(str(((f'monitor {memory_location} {int(value)}'))))#value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command((((f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}'))))#value should be 14 bit
     
 def Set_ki(value):
     memory_location =  ML.set_ki_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Set_kd(value):
     memory_location =  ML.set_kd_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Set_point(volt_value):
     memory_location =  ML.set_point_ad
     value = voltage_to_decimal(float(volt_value))
-    print (f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Trigger(volt_value):
     memory_location =  ML.Trigger_ad
     value = voltage_to_decimal(volt_value)
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 
 def Set_kp_bitshift(value):
     memory_location =  ML.kp_bitshift_ad
-    print(str((f'monitor {memory_location} {int(value)}') ))#value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(((f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') ))#value should be 14 bit
 
 def Set_ki_bitshift(value):
     memory_location =  ML.ki_bitshift_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Set_kd_bitshift(value):
     memory_location =  ML.kd_bitshift_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Low_pass_RC_1(value): #this is the alpha value
     memory_location =  ML.low_pass_RC_1_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Low_pass_bit_1(value):
     memory_location =  ML.low_pass_bit_1_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Low_pass_RC_2(value):
     memory_location =  ML.low_pass_RC_2_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Low_pass_bit_2(value):
     memory_location =  ML.low_pass_bit_2_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Low_pass_bypass_1(value):
     memory_location =  ML.low_pass_bypass_1_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Low_pass_bypass_2(value):
     memory_location =  ML.low_pass_bypass_2_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Int_store_out(value):
     memory_location =  ML.int_store_out_ad
-    print(f'monitor {memory_location}') #just read the value
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location}') #just read the value
+    print(stdout.read())
+    print(stderr.read())#incase of error
 
 def Clock_limit(value):
     memory_location =  ML.clock_limit_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Clock_limit_bit(value):
     memory_location =  ML.clock_limit_bit_ad
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def secs_to_clock_limit(value_secs):
     value = round(float(value_secs) * 125000000) #125MHz clock
@@ -165,39 +173,62 @@ def find_alpha_and_bitshift(cutoff_freq):
     print(2**bitshift*alpha)
     return alpha, bitshift
 
-def set_low_pass_filter_1(cutoff_freq,bypass):
-    alpha, bitshift = find_alpha_and_bitshift(cutoff_freq)
-    Low_pass_RC_1(float(alpha))
-    Low_pass_bit_1(float(bitshift))
-    Low_pass_bypass_1(bypass)
+def low_pass_1_reset():
+    memory_location =  ML.low_pass_reset_1_ad
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 1') 
+    sleep(0.1)
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 0')
 
-def set_low_pass_filter_2(cutoff_freq,bypass):
-    alpha, bitshift = find_alpha_and_bitshift(float(cutoff_freq))
-    Low_pass_RC_2(float(alpha))
-    Low_pass_bit_2(float(bitshift))
-    Low_pass_bypass_2(bypass)
+def low_pass_2_reset():
+    memory_location =  ML.low_pass_reset_2_ad
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 1') 
+    sleep(0.1)
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 0')
+
+def set_low_pass_filters(cutoff_freq1,bypass1,cutoff_freq2,bypass2):
+    alpha1, bitshift1 = find_alpha_and_bitshift(cutoff_freq1)
+    #first reset the filter
+    low_pass_1_reset()
+    low_pass_2_reset()
+    #set the filters
+
+    Low_pass_RC_1(float(alpha1))
+    Low_pass_bit_1(float(bitshift1))
+    Low_pass_bypass_1(bypass1)
+    #set the second filter
+    alpha2, bitshift2 = find_alpha_and_bitshift(cutoff_freq2)
+    Low_pass_RC_2(float(alpha2))
+    Low_pass_bit_2(float(bitshift2))
+    Low_pass_bypass_2(bypass2)
+
+
 
 def int_rst():
     memory_location =  ML.int_rst_ad
-    print (f'monitor {memory_location} 1') 
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 1') 
     sleep(0.1)
-    print (f'monitor {memory_location} 0') 
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 0') 
 
 
 def start_point(starting_voltage):
     memory_location =  ML.start_point_ad
     value = voltage_to_decimal(float(starting_voltage))
-    print(f'monitor {memory_location} {int(value)}') #value should be 14 bit
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
 
 def Reset_PID():
     memory_location =  ML.reset_pid_ad
-    print (f'monitor {memory_location} 0') 
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 0') 
     sleep(0.1)
-    print (f'monitor {memory_location} 1')
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 1')
 
 def start_up():
     memory_location =  ML.reset_pid_ad
-    print (f'monitor {memory_location} 1')
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 1')
+
+def stop_PID():
+    memory_location =  ML.reset_pid_ad
+    stdin, stdout, stderr = ssh.exec_command (f'/opt/redpitaya/bin/monitor {memory_location} 0') 
+    
     
 
 def Scaling(bounds,value,gain_offset,a_or_b,reset):
@@ -209,4 +240,4 @@ def Scaling(bounds,value,gain_offset,a_or_b,reset):
     hex_string = hex(int(binary_string,2))
     #print(hex_string) #need to check this conversion!
 
-    os.system(f'monitor {memory_location} {hex_string}')
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {hex_string}')
