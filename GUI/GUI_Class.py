@@ -51,7 +51,9 @@ class Scrollbar:
         self.scrollbar.grid(row =row, column=column, rowspan=rowspan, sticky= sticky)
 #add a theme to the GUI
 
-root_main = tkt.ThemedTk(theme='breeze')
+root_main = tk.Tk()
+style = tkt.ThemedStyle(root_main)
+style.set_theme('xpnative')
 
 
 
@@ -101,7 +103,7 @@ kp_spinbox = Spinbox(root, from_=-8192, to=8191,step=1,row=1, column=1)
 ki_label = Label(root, text='Ki:', row=2, column=0)
 ki_spinbox = Spinbox(root, from_=-8192, to=8191,step=1,row=2, column=1)
 kd_label = Label(root, text='Kd:', row=3, column=0)
-kd_spinbox = Spinbox(root, from_=-8192, to=8191,step=1,row=3, column=1)
+kd_spinbox = Spinbox(root, from_=-268435456, to=268435455,step=1,row=3, column=1)
 bitshift_label = Label(root, text='Bitshift Values', row=0, column=3)
 
 kp_bitshift_label = Label(root, text='Kp Bitshift:', row=1, column=2)
@@ -109,11 +111,16 @@ kp_bitshift_spinbox = Spinbox(root, from_=0, to=15,step=1,row=1, column=3)
 ki_bitshift_label = Label(root, text='Ki Bitshift:', row=2, column=2)
 ki_bitshift_spinbox = Spinbox(root, from_=0, to=15,step=1,row=2, column=3)
 kd_bitshift_label = Label(root, text='Kd Bitshift:', row=3, column=2)
-kd_bitshift_spinbox = Spinbox(root, from_=0, to=15,step=1,row=3, column=3)
+kd_bitshift_spinbox = Spinbox(root, from_=-15, to=15,step=1,row=3, column=3)
 #Create a button widget to set the PID values
 set_button_Kp = Button(root, text='Set Kp', command=lambda: f.set_kp_and_bitshift(kp_spinbox.get(), kp_bitshift_spinbox.get()), row=1, column=4)
 set_button_Ki = Button(root, text='Set Ki', command=lambda: f.set_ki_and_bitshift(ki_spinbox.get(), ki_bitshift_spinbox.get()), row=2, column=4)
 set_button_Kd = Button(root, text='Set Kd', command=lambda: f.set_kd_and_bitshift(kd_spinbox.get(), kd_bitshift_spinbox.get()), row=3, column=4)
+
+Div_clock_label = Label(root, text='Div Clock', row=2, column=5)
+Div_clock_spinbox = Spinbox(root, from_=0, to=4294967295,step=1,row=3, column=5)
+set_button_div_clock = Button(root, text='Set Div Clock', command=lambda: f.Div_clock(Div_clock_spinbox.get()), row=3, column=7)
+
 
 #low pass filter
 low_pass_label = Label(root, text='Low Pass Filter', row=4, column=0)
@@ -128,6 +135,11 @@ low_pass_2_cut_label = Label(root, text='Low Pass 2 cutoff (Hz):', row=6, column
 low_pass_bypass_1_tickbox = Tickbox(root, text='Low Pass 1 Bypass', row=5, column=2)
 low_pass_bypass_2_tickbox = Tickbox(root, text='Low Pass 2 Bypass', row=6, column=2)
 
+PID_low_pass_label = Label(root, text='PID Low Pass', row=5, column=4)
+PID_low_pass_Spinbox = Spinbox(root, from_=0, to=20000,step=1,row=6, column=4)
+
+PID_bypass_tickbox = Tickbox(root, text='PID Low Pass Bypass', row=6, column=5)
+set_button_PID_low_pass = Button(root, text='Set PID Low Pass', command=lambda: f.set_low_pass_PID(PID_low_pass_Spinbox.get(), PID_bypass_tickbox.get()), row=6, column=6)
 #add set buttons
 set_button_low_pass = Button(root, text='Set Low Pass Filters', command=lambda: f.set_low_pass_filters(low_pass_cut_off_1.get(), low_pass_bypass_1_tickbox.get(), low_pass_cut_off_2.get(), low_pass_bypass_2_tickbox.get()), row=5, column=3)
 
@@ -160,7 +172,7 @@ reset_button = Button(root, text='Reset PID', command=lambda:f.Reset_PID(), row=
 
 #add integral store 
 int_store_label = Label(root, text='Integral Store', row=11, column=0)
-int_store_spinbox = Spinbox(root, from_=-8192, to=8191,step=1,row=11, column=1)
+int_store_spinbox = Spinbox(root, from_=-1, to=1,step=0.1,row=11, column=1)
 set_button_int_store = Button(root, text='Set Integral Store', command=lambda: f.start_point(int_store_spinbox.get()), row=11, column=2)
 
 #int reset button
@@ -174,7 +186,7 @@ set_button_clock_limit = Button(root, text='Set Clock Limit', command=lambda: f.
 #Start up button
 start_up_button = Button(root, text='Start Up', command=lambda: f.start_up(), row=8, column=3)
 #Stop PID button
-stop_pid_button = Button(root, text='Stop PID', command=lambda: f.stop_pid(), row=9, column=3)
+stop_pid_button = Button(root, text='Stop PID', command=lambda: f.stop_PID(), row=9, column=3)
 
 #add scaling for gain and offset of channel A
 scaling_label = Label(root, text='Scaling', row=13, column=2)
@@ -193,6 +205,7 @@ set_offset_button_B = Button(root, text='Set B Offset', command=lambda: f.Scalin
 #add reset button for scale
 reset_button_scale = Button(root, text='Reset Scale', command=lambda: f.Scaling(0,0,0,0,0), row=16, column=0)
 root.mainloop()
+
 
 
 

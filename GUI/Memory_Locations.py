@@ -23,6 +23,10 @@ low_pass_bypass_1_ad = '0x41340000'#GPIO 20#
 low_pass_bypass_2_ad = '0x41350000'#GPIO 21#
 start_point_ad = '0x41360000'#GPIO 22#
 int_store_out_ad = '0x41370000'#GPIO 23#
-
-
+div_clock_ad = '0x41380000'#GPIO 24#
+low_pass_PID_ad = '0x41390000'#GPIO 25#
+low_pass_PID_bitshift_ad = '0x413A0000'#GPIO 26#
+low_pass_PID_reset_ad = '0x413B0000'#GPIO 27#
+low_pass_bypass_PID_ad = '0x413C0000'#GPIO 28#
+kd_bitshift_up_ad = '0x413D0000'#GPIO 29#
 
