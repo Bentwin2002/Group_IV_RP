@@ -29,4 +29,5 @@ low_pass_PID_bitshift_ad = '0x413A0000'#GPIO 26#
 low_pass_PID_reset_ad = '0x413B0000'#GPIO 27#
 low_pass_bypass_PID_ad = '0x413C0000'#GPIO 28#
 kd_bitshift_up_ad = '0x413D0000'#GPIO 29#
-
+rising_clock_limit_ad = '0x413E0000'#GPIO 30#
+rising_clock_bit_ad = '0x413F0000'#GPIO 31#

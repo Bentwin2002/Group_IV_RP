@@ -129,6 +129,13 @@ def Clock_limit(value):
 def Clock_limit_bit(value):
     memory_location =  ML.clock_limit_bit_ad
     stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}') #value should be 14 bit
+def Rising_Clock_limit(value):
+    memory_location =  ML.rising_clock_limit_ad
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}')
+
+def Rising_Clock_bit(value):
+    memory_location =  ML.rising_clock_bit_ad
+    stdin, stdout, stderr = ssh.exec_command(f'/opt/redpitaya/bin/monitor {memory_location} {int(value)}')
 
 def secs_to_clock_limit(value_secs):
     value = round(float(value_secs) * 125000000) #125MHz clock
@@ -144,6 +151,11 @@ def clock_limit_secs(value):
     exp_val, input_val = secs_to_clock_limit(value)
     Clock_limit(input_val)
     Clock_limit_bit(exp_val)
+
+def rising_clock_limit_secs(value):
+    exp_val, input_val = secs_to_clock_limit(value)
+    Rising_Clock_limit(input_val)
+    Rising_Clock_bit(exp_val)
 
 
 def cutoff_freq_to_RC(cutoff_freq):

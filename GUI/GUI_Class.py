@@ -166,7 +166,7 @@ trigger_spinbox = Spinbox(root, from_=-1, to=1,step=0.1,row=9, column=1)
 set_button_trigger = Button(root, text='Set Trigger', command=lambda: f.Trigger(trigger_spinbox.get()), row=9, column=2)
 
 #add reset button
-reset_button = Button(root, text='Reset PID', command=lambda:f.Reset_PID(), row=12, column=3)
+reset_button = Button(root, text='Reset PID', command=lambda:f.Reset_PID(), row=10, column=3)
 
 
 
@@ -179,10 +179,12 @@ set_button_int_store = Button(root, text='Set Integral Store', command=lambda: f
 int_reset_button = Button(root, text='Reset Integral', command=lambda: f.int_rst(), row=11, column=3)
 
 #add clock limit
-clock_limit_label = Label(root, text='Clock Limit (s)', row=12, column=0)
+clock_limit_label = Label(root, text='Falling Clock Limit (s)', row=12, column=0)
 clock_limit_spinbox = Spinbox(root, from_=0, to=2,step=0.01,row=12, column=1)
-set_button_clock_limit = Button(root, text='Set Clock Limit', command=lambda: f.clock_limit_secs(clock_limit_spinbox.get()), row=12, column=2)
-
+set_button_clock_limit = Button(root, text='Set Falling Clock Limit', command=lambda: f.clock_limit_secs(clock_limit_spinbox.get()), row=12, column=2)
+rising_clock_limit_label = Label(root, text='Rising Clock Limit (s)', row=12, column=3)
+rising_clock_limit_spinbox = Spinbox(root, from_=0, to=2,step=0.01,row=12, column=4)
+set_button_rising_clock_limit = Button(root, text='Set Rising Clock Limit', command=lambda: f.rising_clock_limit_secs(rising_clock_limit_spinbox.get()), row=12, column=5)
 #Start up button
 start_up_button = Button(root, text='Start Up', command=lambda: f.start_up(), row=8, column=3)
 #Stop PID button
