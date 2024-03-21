@@ -1,4 +1,3 @@
-from fabric import Connection
 import Functions as f
 from tkinter import *
 import Memory_Locations as ML

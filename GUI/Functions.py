@@ -1,5 +1,3 @@
-import os 
-import time
 import Memory_Locations as ML
 import numpy as np
 from time import sleep
@@ -307,7 +305,7 @@ def Div_clock(value):
 
 
 def launch_bitfile():
-    stdin, stdout, stderr = ssh.exec_command('cat /root/PID_FINAL6.bit >> /dev/xdevcfg') #output =0,1,2: PID, Trigger_DAC, pure_DAC
+    stdin, stdout, stderr = ssh.exec_command('cat /root/PID_FINALnew.bit >> /dev/xdevcfg') #output =0,1,2: PID, Trigger_DAC, pure_DAC
     print(stdout.read())
     print(stderr.read())#incase of error
     sleep(0.1)
