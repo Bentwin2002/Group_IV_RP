@@ -1,0 +1,758 @@
+
+*** Running vivado
+    with args -log system_util_ds_buf_2_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_util_ds_buf_2_0.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source system_util_ds_buf_2_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 450.910 ; gain = 182.473
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.cache/ip 
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_util_ds_buf_2_0
+Command: synth_design -top system_util_ds_buf_2_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 18652
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1298.953 ; gain = 440.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_util_ds_buf_2_0' [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/synth/system_util_ds_buf_2_0.vhd:64]
+	Parameter C_BUF_TYPE bound to: OBUFDS - type: string 
+	Parameter C_SIZE bound to: 2 - type: integer 
+	Parameter C_BUFGCE_DIV bound to: 1 - type: integer 
+	Parameter C_BUFG_GT_SYNC bound to: 0 - type: integer 
+	Parameter C_SIM_DEVICE bound to: VERSAL_AI_CORE_ES1 - type: string 
+	Parameter C_OBUFDS_GTE5_ADV bound to: 2'b00 
+	Parameter C_REFCLK_ICNTL_TX bound to: 5'b00000 
+INFO: [Synth 8-3491] module 'util_ds_buf' declared at 'c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:73' bound to instance 'U0' of component 'util_ds_buf' [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/synth/system_util_ds_buf_2_0.vhd:201]
+INFO: [Synth 8-638] synthesizing module 'util_ds_buf' [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:252]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_I' to cell 'OBUFDS' [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:397]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_I' to cell 'OBUFDS' [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'util_ds_buf' (0#1) [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:252]
+INFO: [Synth 8-256] done synthesizing module 'system_util_ds_buf_2_0' (0#1) [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/synth/system_util_ds_buf_2_0.vhd:64]
+WARNING: [Synth 8-3848] Net BUFG_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:110]
+WARNING: [Synth 8-3848] Net BUFGCE_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:115]
+WARNING: [Synth 8-3848] Net BUFH_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:120]
+WARNING: [Synth 8-3848] Net BUFHCE_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:125]
+WARNING: [Synth 8-3848] Net BUFG_FABRIC_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:129]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:134]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:135]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:140]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:141]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:147]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:148]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:153]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:154]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:160]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:161]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:166]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:167]
+WARNING: [Synth 8-3848] Net IBUFDS_GTM_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:171]
+WARNING: [Synth 8-3848] Net IBUFDS_GTM_ODIV2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:172]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:178]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:179]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:186]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:187]
+WARNING: [Synth 8-3848] Net IBUFDS_GTME5_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:190]
+WARNING: [Synth 8-3848] Net IBUFDS_GTME5_ODIV2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:191]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:199]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:200]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:206]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:207]
+WARNING: [Synth 8-3848] Net BUFG_GT_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:217]
+WARNING: [Synth 8-3848] Net BUFG_PS_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:221]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O1 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:233]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:234]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O3 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:235]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O4 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:236]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O1 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:241]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:242]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O3 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:243]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O4 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:244]
+WARNING: [Synth 8-7129] Port BUFG_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFHCE_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFHCE_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_FABRIC_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_FABRIC_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_ODIV2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_ODIV2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_ODIV2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_ODIV2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_GT_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_GT_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_PS_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_PS_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O1[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O1[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O3[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O3[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O4[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O4[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O1[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O1[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O3[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O3[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O4[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O4[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_IO[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_IO[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_P[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_P[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_N[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_N[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_CEB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_T[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_T[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CE[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CE[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CLR[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CLR[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_I[0] in module util_ds_buf is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1406.918 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+WARNING: [Netlist 29-1115] Found multi-term driver net: U0/<const0>.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.runs/system_util_ds_buf_2_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.runs/system_util_ds_buf_2_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1406.918 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 2 instances
+
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1406.918 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.runs/system_util_ds_buf_2_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:41 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:44 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:54 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |OBUFDS |     2|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 245 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:58 . Memory (MB): peak = 1406.918 ; gain = 548.344
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:01:04 . Memory (MB): peak = 1406.918 ; gain = 548.344
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1406.918 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-1115] Found multi-term driver net: U0/<const0>.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1419.094 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 2 instances
+
+The system cannot find the path specified.
+Synth Design complete | Checksum: e12f4a60
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 143 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:18 . Memory (MB): peak = 1419.094 ; gain = 953.480
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1419.094 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.runs/system_util_ds_buf_2_0_synth_1/system_util_ds_buf_2_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_util_ds_buf_2_0, cache-ID = 7f394be9d2eb0964
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1419.094 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'c:/Users/benja/Desktop/Project_folder/Vivado/Red-Pitaya-main/Complete_setup/tmp/Pid_project_2/Pid_project_2.runs/system_util_ds_buf_2_0_synth_1/system_util_ds_buf_2_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_util_ds_buf_2_0_utilization_synth.rpt -pb system_util_ds_buf_2_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 11 11:44:51 2024...
+
+*** Running vivado
+    with args -log system_util_ds_buf_2_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_util_ds_buf_2_0.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source system_util_ds_buf_2_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 451.055 ; gain = 181.961
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/benja/Desktop/Complete_setup/tmp/cores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_util_ds_buf_2_0
+Command: synth_design -top system_util_ds_buf_2_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 24744
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1297.715 ; gain = 439.094
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_util_ds_buf_2_0' [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/synth/system_util_ds_buf_2_0.vhd:64]
+	Parameter C_BUF_TYPE bound to: OBUFDS - type: string 
+	Parameter C_SIZE bound to: 2 - type: integer 
+	Parameter C_BUFGCE_DIV bound to: 1 - type: integer 
+	Parameter C_BUFG_GT_SYNC bound to: 0 - type: integer 
+	Parameter C_SIM_DEVICE bound to: VERSAL_AI_CORE_ES1 - type: string 
+	Parameter C_OBUFDS_GTE5_ADV bound to: 2'b00 
+	Parameter C_REFCLK_ICNTL_TX bound to: 5'b00000 
+INFO: [Synth 8-3491] module 'util_ds_buf' declared at 'c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:73' bound to instance 'U0' of component 'util_ds_buf' [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/synth/system_util_ds_buf_2_0.vhd:201]
+INFO: [Synth 8-638] synthesizing module 'util_ds_buf' [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:252]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_I' to cell 'OBUFDS' [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:397]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_I' to cell 'OBUFDS' [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'util_ds_buf' (0#1) [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:252]
+INFO: [Synth 8-256] done synthesizing module 'system_util_ds_buf_2_0' (0#1) [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/synth/system_util_ds_buf_2_0.vhd:64]
+WARNING: [Synth 8-3848] Net BUFG_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:110]
+WARNING: [Synth 8-3848] Net BUFGCE_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:115]
+WARNING: [Synth 8-3848] Net BUFH_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:120]
+WARNING: [Synth 8-3848] Net BUFHCE_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:125]
+WARNING: [Synth 8-3848] Net BUFG_FABRIC_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:129]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:134]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:135]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:140]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:141]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:147]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:148]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:153]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:154]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:160]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:161]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:166]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:167]
+WARNING: [Synth 8-3848] Net IBUFDS_GTM_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:171]
+WARNING: [Synth 8-3848] Net IBUFDS_GTM_ODIV2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:172]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:178]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:179]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:186]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:187]
+WARNING: [Synth 8-3848] Net IBUFDS_GTME5_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:190]
+WARNING: [Synth 8-3848] Net IBUFDS_GTME5_ODIV2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:191]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:199]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:200]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_ADV_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:206]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_ADV_OB in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:207]
+WARNING: [Synth 8-3848] Net BUFG_GT_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:217]
+WARNING: [Synth 8-3848] Net BUFG_PS_O in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:221]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O1 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:233]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:234]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O3 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:235]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O4 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:236]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O1 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:241]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O2 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:242]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O3 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:243]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O4 in module/entity util_ds_buf does not have driver. [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/util_ds_buf.vhd:244]
+WARNING: [Synth 8-7129] Port BUFG_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFHCE_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFHCE_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_FABRIC_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_FABRIC_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_ODIV2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_ODIV2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_ODIV2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_ODIV2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_OB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_GT_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_GT_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_PS_O[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_PS_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O1[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O1[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O3[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O3[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O4[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O4[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O1[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O1[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O2[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O3[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O3[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O4[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O4[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_IO[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_IO[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_P[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_P[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_N[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_N[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_CEB[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_T[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_T[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CE[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CE[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CLR[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CLR[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_I[0] in module util_ds_buf is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1409.324 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-1115] Found multi-term driver net: U0/<const0>.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.gen/sources_1/bd/system/ip/system_util_ds_buf_2_0/system_util_ds_buf_2_0_board.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.runs/system_util_ds_buf_2_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.runs/system_util_ds_buf_2_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1409.324 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 2 instances
+
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1409.324 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  C:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.runs/system_util_ds_buf_2_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |OBUFDS |     2|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 245 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 1409.324 ; gain = 550.703
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:32 . Memory (MB): peak = 1409.324 ; gain = 550.703
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1409.324 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-1115] Found multi-term driver net: U0/<const0>.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1409.324 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 2 instances
+
+The system cannot find the path specified.
+Synth Design complete | Checksum: e12f4a60
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 142 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:39 . Memory (MB): peak = 1409.324 ; gain = 943.398
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1409.324 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.runs/system_util_ds_buf_2_0_synth_1/system_util_ds_buf_2_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_util_ds_buf_2_0, cache-ID = 7f394be9d2eb0964
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1409.324 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/benja/Desktop/clean/tmp/WIP3/WIP3.runs/system_util_ds_buf_2_0_synth_1/system_util_ds_buf_2_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_util_ds_buf_2_0_utilization_synth.rpt -pb system_util_ds_buf_2_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 19 14:38:47 2024...
