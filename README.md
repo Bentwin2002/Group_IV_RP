@@ -24,7 +24,7 @@ Getting started
 1) Upload the .bit file to your red pitaya (need to upload a .bit file, currently you need to compile your own)
 2) As long as you are on the old version of the redpitaya OS and the file name is correct in the Functions.py launch_bitfile function, currently:     stdin, stdout, stderr = ssh.exec_command('cat /root/PID_FINALnew.bit >> /dev/xdevcfg'), change the PID_FINALnew.bit, to the correct name.
 3) Put the correct IP for your RedPitaya in the Functions.py file at the top.
-4) Download the needed Python libraries. (numpy, paramiko, tkinter,ttkthemes) ((don't really need ttkthemes anymore))
+4) Download the needed Python libraries. (numpy, paramiko, tkinter,ttkthemes)
 5) Run the GUI_Classes file, GUI will launch if it can connect to the RedPitaya
 
 
